@@ -5,7 +5,7 @@
     </div>
     <div class="input-field col s6">
       <i class="material-icons prefix">search</i>
-      <input id="icon_prefix" type="text" v-model="searchFilterInput" class="validate">
+      <input id="icon_prefix" type="text" v-model="searchFilterInput" class="validate" />
       <label for="icon_prefix">Поиск по именам</label>
     </div>
     <Loader v-if="loading" />

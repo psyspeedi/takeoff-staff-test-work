@@ -7,7 +7,7 @@
       <ul class="right hide-on-small-and-down">
         <li>
           <a class="dropdown-trigger black-text" href="#" data-target="dropdown" ref="dropdown">
-            {{info.name}}
+            {{ info.name }}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
           <ul id="dropdown" class="dropdown-content">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import { mapGetters } from 'vuex'
   export default {
     data: () => ({
       date: new Date(),
@@ -43,7 +43,6 @@
         } catch (e) {
           throw new Error(e)
         }
-
       }
     },
     mounted() {

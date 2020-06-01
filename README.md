@@ -1,24 +1,12 @@
 # takeoff-staff-test-work
 
-## Project setup
+## Проект доступен по ссылке
 ```
-npm install
+https://takeoff-staff-test-work.web.app
 ```
+### 
+```
+исходный код в данном репозитории
 
-### Compiles and hot-reloads for development
+в качестве бэкенда и базы данных использовался firebase
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

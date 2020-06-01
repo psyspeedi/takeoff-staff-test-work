@@ -1,5 +1,5 @@
 <template>
-  <Loader v-if="loading"/>
+  <Loader v-if="loading" />
   <div v-else class="app-main-layout">
     <Navbar />
     <main class="app-content">

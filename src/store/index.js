@@ -36,27 +36,50 @@ export default new Vuex.Store({
   actions: {
     async createContact({ dispatch }, contact) {
       const uid = await dispatch('getUid')
-      return await firebase.database().ref(`/users/${uid}/contacts`).push(contact)
+      return await firebase
+        .database()
+        .ref(`/users/${uid}/contacts`)
+        .push(contact)
     },
     async fetchInfo({ commit, dispatch }) {
       const uid = await dispatch('getUid')
-      const info = (await firebase.database().ref(`/users/${uid}/info`).once('value')).val() || {}
+      const info =
+        (
+          await firebase
+            .database()
+            .ref(`/users/${uid}/info`)
+            .once('value')
+        ).val() || {}
       commit('setInfo', info)
     },
     async fetchContacts({ commit, dispatch }) {
       const uid = await dispatch('getUid')
-      const contacts = (await firebase.database().ref(`/users/${uid}/contacts`).once('value')).val() || {}
-      const arrayContacts = Object.keys(contacts).map(key => ({...contacts[key], id: key}))
+      const contacts =
+        (
+          await firebase
+            .database()
+            .ref(`/users/${uid}/contacts`)
+            .once('value')
+        ).val() || {}
+      const arrayContacts = Object.keys(contacts).map(key => ({ ...contacts[key], id: key }))
       commit('setContacts', arrayContacts)
     },
     async updateContact({ dispatch }, contact) {
       const uid = await dispatch('getUid')
-      await firebase.database().ref(`/users/${uid}/contacts`).child(contact.id).update({...contact, id: null})
+      await firebase
+        .database()
+        .ref(`/users/${uid}/contacts`)
+        .child(contact.id)
+        .update({ ...contact, id: null })
       await dispatch('fetchContacts')
     },
     async removeContact({ dispatch }, id) {
       const uid = await dispatch('getUid')
-      await firebase.database().ref(`/users/${uid}/contacts`).child(id).remove()
+      await firebase
+        .database()
+        .ref(`/users/${uid}/contacts`)
+        .child(id)
+        .remove()
       await dispatch('fetchContacts')
     }
   },
