@@ -11,7 +11,7 @@
             invalid: ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.minLength)
           }"
         />
-        <label for="email">Email</label>
+        <label for="email">Имя</label>
         <small class="helper-text invalid" v-if="$v.name.$dirty && !$v.name.required"
           >Имя не должно быть пустым</small
         >
