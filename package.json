@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^7.14.6",
+    "materialize-css": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-imask": "^6.0.5",
     "vue-router": "^3.2.0",
+    "vuelidate": "^0.7.5",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
